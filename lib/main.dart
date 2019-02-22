@@ -36,7 +36,7 @@ class MyPageState extends State<MyPage> {
       tabBuilder: (BuildContext context, int index) {
         return new CupertinoTabView(
           builder: (BuildContext context) {
-            return ChildView(
+            return NextView(
               index: index,
             );
           },
@@ -46,11 +46,11 @@ class MyPageState extends State<MyPage> {
   }
 }
 
-class ChildView extends StatelessWidget {
+class NextView extends StatelessWidget {
   final int index;
   final int pageNumber;
 
-  const ChildView({
+  const NextView({
     Key key,
     @required this.index,
     this.pageNumber = 1,
@@ -69,7 +69,7 @@ class ChildView extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) {
-                  return ChildView(
+                  return NextView(
                     index: index,
                     pageNumber: pageNumber + 1,
                   );
